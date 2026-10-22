@@ -24,7 +24,7 @@ The corrected topology shows Security Onion management on VMnet8 and the monitor
 
 ## Reconnaissance activity and Nmap results
 
-The supplied notes record a TCP SYN scan from Kali to `192.168.200.103` on 24 August 2026 at approximately 16:37 WAT.
+The investigation record documents a TCP SYN scan from Kali to `192.168.200.103` on 24 August 2026 at approximately 16:37 WAT.
 
 The Nmap output reported:
 - Target host was up.
@@ -36,20 +36,20 @@ These are results for the recorded scan only, not a complete inventory of the ta
 
 ## Security Onion / Suricata findings
 
-The supplied investigation notes list these ET SCAN alerts:
+The investigation record identifies these ET SCAN alerts:
 - Suspicious inbound to MSSQL port `1433`
 - Suspicious inbound to Oracle SQL port `1521`
 - Suspicious inbound to PostgreSQL port `5432`
 - Suspicious inbound to MySQL port `3306`
 - Potential VNC scan `5800–5820`
 
-A detailed Suricata event was recorded for TCP traffic from `192.168.200.10` to `192.168.200.103:1433`. The supplied notes identify the category as “Potentially Bad Traffic”, severity `2`, action `allowed`, and rule ID `2010935`.
+A detailed Suricata event was recorded for TCP traffic from `192.168.200.10` to `192.168.200.103:1433`. The recorded event identifies the category as “Potentially Bad Traffic”, severity `2`, action `allowed`, and rule ID `2010935`.
 
 A signature match is evidence of traffic matching a reconnaissance rule. It does not establish that MSSQL was running, exposed, or compromised.
 
 ## Packet-level review and correlation
 
-The supplied notes state that PCAP Job `1002` completed and that the packet view showed repeated TCP SYN probes from `192.168.200.10` to `192.168.200.103`. Ports visible in the supplied packet view included `22`, `111`, and `8888`; the notes also record probes involving `143`, `445`, `8080`, and `3389`. The Suricata event excerpt separately showed TCP SYN traffic to port `3306` and a scan signature for `1521`.
+The recorded PCAP evidence indicates that Job `1002` completed and that the packet view showed repeated TCP SYN probes from `192.168.200.10` to `192.168.200.103`. Ports visible in the packet view included `22`, `111`, and `8888`; the investigation record also notes probes involving `143`, `445`, `8080`, and `3389`. The Suricata event excerpt separately showed TCP SYN traffic to port `3306` and a scan signature for `1521`.
 
 | Evidence source | Supported finding |
 |---|---|
@@ -106,4 +106,4 @@ See [evidence/README.md](evidence/README.md). The topology diagram is a correcte
 
 ## Author
 
-**Taiwo Ibrahim** — Cybersecurity | Security Operations | Network Security
+**Taiwo H Ibrahim** — Cybersecurity | Security Operations | Network Security
